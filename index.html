@@ -144,6 +144,10 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden absolute top-20 left-0 right-0 bg-card-bg shadow-2xl hidden">
+            <form onsubmit="event.preventDefault(); searchProducts(document.getElementById('mobile-search').value)" class="px-4 py-3 border-b border-primary-dark flex gap-2">
+                <input id="mobile-search" type="search" placeholder="Search..." class="flex-1 px-3 py-2 rounded-l-full bg-primary-dark border border-gray-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-accent-orange" />
+                <button type="button" onclick="searchProducts(document.getElementById('mobile-search').value)" class="px-3 py-2 rounded-r-full bg-accent-orange text-white font-bold">Search</button>
+            </form>
             <a href="#catalog-view" data-view="catalog-view" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Laptops</a>
             <a href="#build-view" data-view="build-view" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Build Your PC</a>
             <a href="#services-view" data-view="services-view" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Services</a>
