@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Fix Technology - Powering Your Future</title>
+    <meta name="description" content="Click Fix Technology - Premium laptops (HP, Dell, Lenovo) and IT services in Nigeria. High-performance computers with fast repair and custom PC builds.">
+    <meta name="keywords" content="laptops Nigeria, HP laptops, Dell laptops, Lenovo laptops, laptop repair Nigeria, IT support, custom PC">
+    <meta name="author" content="Click Fix Technology">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F97316">
+    <link rel="canonical" href="https://clickfixtech.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Click Fix Technology - Premium Laptops & IT Services">
+    <meta property="og:description" content="High-performance computers and reliable IT service in Nigeria. HP, Dell, and Lenovo laptops available for immediate delivery.">
+    <meta property="og:image" content="https://clickfixtech.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Click Fix Technology - Powering Your Future">
+    <meta property="twitter:description" content="Premium laptops and IT services in Nigeria">
+    
+    <title>Click Fix Technology - Premium Laptops & IT Services in Nigeria | HP, Dell, Lenovo</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind for Inter font and new Orange accent color -->
@@ -99,6 +117,97 @@
             padding: 1rem; /* ensure cards have breathing room */
         }
     </style>
+    <style>
+        /* Lightbox / image modal */
+        #img-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.75);
+            z-index: 60;
+            padding: 1.5rem;
+        }
+        #img-modal.show {
+            display: flex;
+        }
+        #img-modal .modal-content {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0.5rem;
+            overflow: auto;
+        }
+        #img-modal img {
+            width: auto;
+            height: auto;
+            max-width: 90vw;
+            max-height: 80vh;
+            display: block;
+            border-radius: 0.5rem;
+        }
+        #img-modal .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            padding: 0.5rem 0.6rem;
+            border-radius: 999px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        /* show pointer for product images */
+        .bg-card-bg img, .product-image-wrap img {
+            cursor: zoom-in;
+        }
+    </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Click Fix Technology",
+        "description": "Premium laptops and IT services in Nigeria",
+        "url": "https://clickfixtech.com",
+        "telephone": "+2348138807336",
+        "email": "Clickfixtechnology@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2 Oshile Street, Shomolu",
+            "addressLocality": "Lagos",
+            "addressCountry": "NG"
+        },
+        "sameAs": [
+            "https://www.tiktok.com/@clickfix_technology",
+            "https://www.instagram.com/clickfix_technology"
+        ],
+        "priceRange": "₦140,000 - ₦1,850,000"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Click Fix Technology",
+        "logo": "https://clickfixtech.com/logo.png",
+        "url": "https://clickfixtech.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "telephone": "+2348138807336",
+            "email": "Clickfixtechnology@gmail.com"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2 Oshile Street, Shomolu",
+            "addressLocality": "Lagos",
+            "addressCountry": "NG"
+        }
+    }
+    </script>
 </head>
 <body class="text-white">
 
@@ -110,6 +219,14 @@
                 <button onclick="closeSpecsModal()" class="text-gray-300 hover:text-white">Close</button>
             </div>
             <div id="specs-content" class="text-sm text-gray-200"></div>
+        </div>
+    </div>
+
+    <!-- Image Modal (Lightbox) -->
+    <div id="img-modal" class="hidden" aria-hidden="true">
+        <button class="close-btn" onclick="closeImageModal()" aria-label="Close image">✕</button>
+        <div class="modal-content">
+            <img src="" alt="" id="img-modal-img" />
         </div>
     </div>
 
@@ -181,7 +298,7 @@
                         <h2 class="text-3xl font-bold text-white border-l-4 border-accent-orange pl-4">Best Selling HP Laptops</h2>
                         <a href="#catalog-view" data-view="catalog-view" class="text-accent-orange hover:underline nav-link text-sm sm:text-base">View All &rarr;</a>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         <!-- Best Selling HP 1 -->
                         <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700 relative group overflow-hidden">
                             <div class="absolute top-0 right-0 bg-accent-orange text-primary-dark text-xs font-bold px-3 py-1 rounded-bl-lg">TOP RATED</div>
@@ -337,7 +454,7 @@
                 <h2 class="text-3xl font-bold text-white border-l-4 border-accent-orange pl-4">Best Sellers</h2>
                 <a href="#catalog-view" data-view="catalog-view" class="text-accent-orange hover:underline nav-link text-sm sm:text-base">View All &rarr;</a>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <!-- Best Selling Dell Laptops 1 -->
                 <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700 relative group overflow-hidden">
                     <div class="absolute top-0 right-0 bg-accent-orange text-primary-dark text-xs font-bold px-3 py-1 rounded-bl-lg">TOP RATED</div>
@@ -391,7 +508,7 @@
         
                 <section class="py-16">
                     <h2 class="text-3xl font-bold text-center mb-12 text-accent-orange">Why Click Fix Technology?</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         <div class="p-6 rounded-xl bg-card-bg shadow-lg border-t-4 border-accent-orange">
                             <h3 class="text-xl font-semibold mb-2 text-white text-center">Brand Excellence</h3>
                             <p class="text-gray-400 text-center">Top models from HP, Dell, and Lenovo available for immediate delivery in Nigeria.</p>
@@ -414,7 +531,7 @@
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap justify-center gap-2 mb-8" id="filter-buttons"></div>
                 <!-- Product Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-list"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-list"></div>
             </div>
 
             <!-- BUILD PC VIEW -->
@@ -436,7 +553,7 @@
             <!-- SERVICES VIEW -->
             <div id="services-view" class="hidden page-view">
                 <h2 class="text-4xl font-extrabold text-center mb-10 text-accent-orange">Our Services</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     <div class="bg-card-bg p-8 rounded-xl border-t-4 border-accent-orange">
                         <h3 class="text-2xl font-bold mb-4">Laptop Repairs</h3>
                         <p class="text-gray-400 mb-6">Screen replacement, hinges, motherboard repairs, and more.</p>
@@ -638,6 +755,48 @@
             document.getElementById('specs-modal').classList.add('hidden');
             document.getElementById('specs-modal').classList.remove('flex');
         }
+
+        /* Image lightbox modal ------------------------------------------------ */
+        function openImageModal(src, alt) {
+            const modal = document.getElementById('img-modal');
+            const img = document.getElementById('img-modal-img');
+            if (!modal || !img) return;
+            img.src = src;
+            img.alt = alt || '';
+            modal.classList.add('show');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('img-modal');
+            const img = document.getElementById('img-modal-img');
+            if (!modal || !img) return;
+            modal.classList.remove('show');
+            modal.classList.add('hidden');
+            img.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Open image modal when clicking images inside product cards
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target && target.tagName === 'IMG' && target.closest('.bg-card-bg')) {
+                openImageModal(target.src, target.alt || 'Product image');
+            }
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeImageModal();
+        });
+
+        // Close when clicking the overlay (outside the image)
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('img-modal');
+            if (!modal) return;
+            if (e.target === modal) closeImageModal();
+        });
 
         function renderFilterButtons() {
             const container = document.getElementById('filter-buttons');
