@@ -102,6 +102,17 @@
 </head>
 <body class="text-white">
 
+    <!-- Specs Modal -->
+    <div id="specs-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+        <div class="bg-card-bg rounded-xl w-11/12 max-w-2xl p-6 text-left text-white">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="specs-title" class="text-lg font-bold">Model Specs</h3>
+                <button onclick="closeSpecsModal()" class="text-gray-300 hover:text-white">Close</button>
+            </div>
+            <div id="specs-content" class="text-sm text-gray-200"></div>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-40 bg-primary-dark/95 backdrop-blur-sm shadow-xl border-b border-card-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
@@ -118,6 +129,12 @@
                     <span class="text-sm font-bold">Chat on WhatsApp</span>
                 </a>
             </nav>
+
+            <!-- Search (desktop) -->
+            <form onsubmit="event.preventDefault(); searchProducts(document.getElementById('nav-search').value)" class="hidden md:flex items-center ml-6">
+                <input id="nav-search" type="search" placeholder="Search laptops..." aria-label="Search laptops" class="px-3 py-2 rounded-l-full bg-card-bg border border-gray-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-accent-orange" />
+                <button type="button" onclick="searchProducts(document.getElementById('nav-search').value)" class="px-3 py-2 rounded-r-full bg-accent-orange text-white font-bold ml-0">Search</button>
+            </form>
 
             <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-accent-orange p-2 rounded-lg hover:bg-card-bg transition">
@@ -560,7 +577,10 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">${product.name}</h3>
-                        <p class="text-xs text-gray-400 mb-3">${product.specs}</p>
+                        <!-- specs are shown on-demand via "See more" modal -->
+                        <div class="mb-3">
+                            <button onclick="openSpecsModal(${product.id})" class="see-more inline-block px-3 py-1 bg-card-bg/70 text-gray-300 rounded-full text-sm hover:bg-primary-dark transition">See more</button>
+                        </div>
                     </div>
                     <div>
                         <p class="text-2xl font-extrabold text-accent-orange mb-4">${formattedPrice}</p>
@@ -582,6 +602,39 @@
             productList.innerHTML = filteredProducts.map(createProductCard).join('');
         }
 
+        // Search products and show results in catalog
+        function searchProducts(query) {
+            query = (query || '').trim().toLowerCase();
+            navigateTo('catalog-view');
+            const productList = document.getElementById('product-list');
+            const filtered = products.filter(p => {
+                if (!query) return true;
+                if (p.name && p.name.toLowerCase().includes(query)) return true;
+                if (p.category && p.category.toLowerCase().includes(query)) return true;
+                const specs = Array.isArray(p.specs) ? p.specs.join(' ') : (p.specs || '');
+                if (specs.toLowerCase().includes(query)) return true;
+                return false;
+            });
+            productList.innerHTML = filtered.map(createProductCard).join('');
+        }
+
+        // Modal control for specs
+        function openSpecsModal(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            document.getElementById('specs-title').textContent = p.name;
+            const specsHtml = Array.isArray(p.specs) ? `<ul class="list-disc pl-5">${p.specs.map(s=>`<li>${s}</li>`).join('')}</ul>` : `<p>${p.specs}</p>`;
+            const priceHtml = `<p class="mt-3 font-bold text-accent-orange">₦${p.price}</p>`;
+            document.getElementById('specs-content').innerHTML = specsHtml + priceHtml;
+            document.getElementById('specs-modal').classList.remove('hidden');
+            document.getElementById('specs-modal').classList.add('flex');
+        }
+
+        function closeSpecsModal(){
+            document.getElementById('specs-modal').classList.add('hidden');
+            document.getElementById('specs-modal').classList.remove('flex');
+        }
+
         function renderFilterButtons() {
             const container = document.getElementById('filter-buttons');
             const categories = ['All', 'HP', 'Dell', 'Lenovo'];
@@ -590,6 +643,14 @@
                 const isActive = cat === activeFilter;
                 return `<button onclick="setFilter('${cat}')" class="px-5 py-2 rounded-full font-bold transition text-sm ${isActive ? 'bg-accent-orange text-white' : 'bg-card-bg text-gray-400 hover:text-white border border-gray-700'}">${cat}</button>`;
             }).join('');
+        }
+
+        // Render top HP items on the homepage (6 items)
+        function renderHomeHP() {
+            const container = document.getElementById('home-hp-grid');
+            if (!container) return;
+            const hpItems = products.filter(p => p.category === 'HP').slice(0, 6);
+            container.innerHTML = hpItems.map(createProductCard).join('');
         }
 
         function setFilter(category) {
@@ -627,6 +688,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
             navigateTo(hash && document.getElementById(hash) ? hash : 'home-view');
+            renderHomeHP();
         });
     </script>
 
