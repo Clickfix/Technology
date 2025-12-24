@@ -22,6 +22,10 @@
     <meta property="twitter:description" content="Premium laptops and IT services in Nigeria">
     
     <title>Click Fix Technology - Premium Laptops & IT Services in Nigeria | HP, Dell, Lenovo</title>
+    <!-- Favicon: logo from logo folder -->
+    <link rel="icon" href="logo/logo.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="logo/logo.jpeg">
+    <link rel="apple-touch-icon" href="logo/logo.jpeg">
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind for Inter font and new Orange accent color -->
@@ -698,10 +702,8 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">${product.name}</h3>
-                        <!-- specs are shown on-demand via "See more" modal -->
-                        <div class="mb-3">
-                            <button onclick="openSpecsModal(${product.id})" class="see-more inline-block px-3 py-1 bg-card-bg/70 text-gray-300 rounded-full text-sm hover:bg-primary-dark transition">See more</button>
-                        </div>
+                        <!-- Specs displayed directly -->
+                        <p class="text-sm text-gray-400 mb-4">${product.specs}</p>
                     </div>
                     <div>
                         <p class="text-2xl font-extrabold text-accent-orange mb-4">${formattedPrice}</p>
@@ -721,6 +723,8 @@
                 : products.filter(p => p.category === activeFilter);
             
             productList.innerHTML = filteredProducts.map(createProductCard).join('');
+            // schedule auto flip for newly rendered cards
+            scheduleAutoFlip();
         }
 
         // Search products and show results in catalog
@@ -737,6 +741,8 @@
                 return false;
             });
             productList.innerHTML = filtered.map(createProductCard).join('');
+            // ensure auto-flip runs for search results
+            scheduleAutoFlip();
         }
 
         // Modal control for specs
@@ -778,6 +784,24 @@
             document.body.style.overflow = '';
         }
 
+        // Auto-flip scheduler: flip after 3s, flip back after 6s
+        function scheduleAutoFlip() {
+            const cards = document.querySelectorAll('.flip-card');
+            cards.forEach((el) => {
+                // clear previous timers if any
+                if (el._autoFlipTimeouts) {
+                    el._autoFlipTimeouts.forEach(t => clearTimeout(t));
+                }
+                const t1 = setTimeout(() => {
+                    el.classList.add('flipped');
+                }, 3000);
+                const t2 = setTimeout(() => {
+                    el.classList.remove('flipped');
+                }, 6000);
+                el._autoFlipTimeouts = [t1, t2];
+            });
+        }
+
         // Open image modal when clicking images inside product cards
         document.addEventListener('click', (e) => {
             const target = e.target;
@@ -814,6 +838,8 @@
             if (!container) return;
             const hpItems = products.filter(p => p.category === 'HP').slice(0, 6);
             container.innerHTML = hpItems.map(createProductCard).join('');
+            // schedule auto flip on homepage cards
+            scheduleAutoFlip();
         }
 
         function setFilter(category) {
@@ -852,6 +878,8 @@
             const hash = window.location.hash.substring(1);
             navigateTo(hash && document.getElementById(hash) ? hash : 'home-view');
             renderHomeHP();
+            // schedule auto-flip for any visible cards on load
+            scheduleAutoFlip();
         });
     </script>
 
