@@ -90,6 +90,15 @@
         .flip-back {
             transform: rotateY(180deg);
         }
+        /* Slider for variants inside product card */
+        .product-slider { position: relative; width: 100%; overflow: hidden; }
+        .product-slider .slider-track { display: flex; width: 100%; }
+        .product-slider .slide { min-width: 100%; box-sizing: border-box; padding: 0.5rem; }
+        .product-slider .slider-prev, .product-slider .slider-next {
+            position: absolute; top: 50%; transform: translateY(-50%); background: rgba(15,23,42,0.7); color: #fff; border: none; padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer;
+        }
+        .product-slider .slider-prev { left: 8px; }
+        .product-slider .slider-next { right: 8px; }
         /* Make product images square on small screens */
         .product-image-wrap {
             position: relative;
@@ -480,7 +489,7 @@
                     <div class="absolute top-0 right-0 bg-accent-orange text-primary-dark text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
                     <div class="h-100 flex items-center justify-center bg-primary-dark/50 rounded-lg mb-4">
                         <!-- <span class="text-accent-orange font-bold text-4xl opacity-20">DELL</span> -->
-                        <img src="Dell laptops/dell 9410.jpeg" alt="">
+                        <img src="Dell laptops/9410.jpeg" alt="">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-1">Dell Lactitude 9410</h3>
                     <p class="text-sm text-gray-400 mb-4">Processor: Intel® Core™ i7-10610U (10th Generation)<br>Memory: 16 GB LPDDR3 RAM <br>Storage: 512 GB PCIe NVMe SSD <br>Display: 14″ Full HD (1920×1080) Touchscreen, anti-reflective <br>Graphics: Intel® UHD Graphics <br>Other Features: Baclight Keyborad, Face ID, Finger Print, Windows 11 Pro</p>
@@ -615,8 +624,8 @@
         // Laptop data with image Naira prices
         const products = [
             { id: 1, name: "HP EliteBook 830 G6 x360", category: "HP", price: 450000, image: "Hp laptops/830 g6.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, Backlit Keyboard" },
-            { id: 2, name: "HP EliteBook 830 G7", category: "HP", price: 400000, image: "Hp laptops/830 g8.jpg", specs: "Core i5 10th Gen, 16GB RAM, 256GB SSD, Backlit Keyboard" },
-            { id: 3, name: "HP EliteBook 830 G7 Touchscreen", category: "HP", price: 450000, image: "Hp laptops/830 g8.jpg", specs: "Core i5 10th Gen, 16GB RAM, 256GB SSD, Touchscreen, Backlit" },
+            { id: 2, name: "HP EliteBook 830 G7", category: "HP", price: 400000, image: "Hp laptops/830 g7 side 1.jpeg", specs: "Core i5 10th Gen, 16GB RAM, 256GB SSD, Backlit Keyboard" },
+            { id: 3, name: "HP EliteBook 830 G7 Touchscreen", category: "HP", price: 450000, image: "Hp laptops/830 g7 side 1.jpeg", specs: "Core i5 10th Gen, 16GB RAM, 256GB SSD, Touchscreen, Backlit" },
             { id: 4, name: "HP EliteBook 830 G7", category: "HP", price: 580000, image: "Hp laptops/830 g8.jpg", specs: "Core i7 10th Gen, 16GB RAM, 512GB SSD, Backlit Keyboard" },
             { id: 5, name: "HP EliteBook 830 G8", category: "HP", price: 600000, image: "Hp laptops/830 g8.jpg", specs: "Core i7 11th Gen, 16GB RAM, 512GB SSD, Backlit Keyboard" },
             { id: 6, name: "HP EliteBook 840 G3", category: "HP", price: 270000, image: "Hp laptops/840 g3.jpeg", specs: "Core i5 6th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
@@ -640,24 +649,24 @@
             { id: 24, name: "HP Elite Dragonfly G2", category: "HP", price: 750000, image: "Hp laptops/dragon fly/WhatsApp Image 2025-12-01 at 1.41.15 AM.jpeg", specs: "Core i7 11th Gen, 16GB RAM, 512GB SSD, x360, Fingerprint, Face ID" },
             { id: 25, name: "HP Elite Dragonfly", category: "HP", price: 650000, image: "Hp laptops/dragon fly/WhatsApp Image 2025-12-01 at 1.41.15 AM.jpeg", specs: "Core i7 8th Gen, 16GB RAM, 512GB SSD, x360, Fingerprint, Face ID" },
             { id: 26, name: "HP ZBook Fury G8 15.6", category: "HP", price: 950000, image: "Hp laptops/1040 G7.jpeg", specs: "Core i7 11th Gen, 16GB RAM, 512GB SSD, 4GB NVIDIA RTX2000" },
-            { id: 27, name: "HP ProBook x360 11 EE G4", category: "HP", price: 250000, image: "Hp laptops/830 g6.jpeg", specs: "Core i5, 8GB RAM, 256GB SSD, Touchscreen, 11.6 inch" },
+            { id: 27, name: "HP ProBook x360 11 EE G4", category: "HP", price: 250000, image: "Hp laptops/probook 11 x360 EE G4 side 1.jpeg", specs: "Core i5, 8GB RAM, 256GB SSD, Touchscreen, 11.6 inch" },
             { id: 28, name: "HP ProBook x360 11 EE G2", category: "HP", price: 235000, image: "Hp laptops/830 g6.jpeg", specs: "Core i5, 8GB RAM, 256GB SSD, Touchscreen, 11.6 inch" },
-            { id: 29, name: "Dell Latitude 3420", category: "Dell", price: 250000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i3 11th Gen, 8GB RAM, 256GB SSD, 15 inch, Backlit" },
-            { id: 30, name: "Dell Latitude 3410", category: "Dell", price: 280000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
-            { id: 31, name: "Dell Latitude 3410", category: "Dell", price: 240000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i3 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
-            { id: 32, name: "Dell Latitude 5300", category: "Dell", price: 235000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Backlit" },
-            { id: 33, name: "Dell Latitude 5300 Touchscreen", category: "Dell", price: 255000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen, Face ID" },
-            { id: 34, name: "Dell 3189/3190 x360", category: "Dell", price: 140000, image: "Dell laptops/dell 9410.jpeg", specs: "Intel Pentium, 8GB RAM, 128GB SSD, 11.6 inch, Touchscreen" },
-            { id: 35, name: "Dell Latitude 7400 Silver", category: "Dell", price: 340000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 8th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 36, name: "Dell Latitude 7480", category: "Dell", price: 220000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 6th Gen, 8GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 37, name: "Dell Latitude 7470", category: "Dell", price: 270000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 6th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 38, name: "Dell Latitude 7490", category: "Dell", price: 245000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
-            { id: 39, name: "Dell Latitude 7390 x360", category: "Dell", price: 275000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen, Backlit" },
-            { id: 40, name: "Dell Latitude 5400", category: "Dell", price: 250000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 41, name: "Dell Latitude 5410", category: "Dell", price: 280000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i5 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
-            { id: 42, name: "Dell Latitude 5410", category: "Dell", price: 350000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 10th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 43, name: "Dell 7410 2-in-1", category: "Dell", price: 440000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 10th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
-            { id: 44, name: "Dell 7420 2-in-1", category: "Dell", price: 500000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 11th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 29, name: "Dell Latitude 3420", category: "Dell", price: 250000, image: "Dell laptops/9410.jpeg", specs: "Core i3 11th Gen, 8GB RAM, 256GB SSD, 15 inch, Backlit" },
+            { id: 30, name: "Dell Latitude 3410", category: "Dell", price: 280000, image: "Dell laptops/9410.jpeg", specs: "Core i5 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
+            { id: 31, name: "Dell Latitude 3410", category: "Dell", price: 240000, image: "Dell laptops/9410.jpeg", specs: "Core i3 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
+            { id: 32, name: "Dell Latitude 5300", category: "Dell", price: 235000, image: "Dell laptops/9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Backlit" },
+            { id: 33, name: "Dell Latitude 5300 Touchscreen", category: "Dell", price: 255000, image: "Dell laptops/9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen, Face ID" },
+            { id: 34, name: "Dell 3189/3190 x360", category: "Dell", price: 140000, image: "Dell laptops/9410.jpeg", specs: "Intel Pentium, 8GB RAM, 128GB SSD, 11.6 inch, Touchscreen" },
+            { id: 35, name: "Dell Latitude 7400 Silver", category: "Dell", price: 340000, image: "Dell laptops/9410.jpeg", specs: "Core i7 8th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 36, name: "Dell Latitude 7480", category: "Dell", price: 220000, image: "Dell laptops/9410.jpeg", specs: "Core i5 6th Gen, 8GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 37, name: "Dell Latitude 7470", category: "Dell", price: 270000, image: "Dell laptops/9410.jpeg", specs: "Core i7 6th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 38, name: "Dell Latitude 7490", category: "Dell", price: 245000, image: "Dell laptops/9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
+            { id: 39, name: "Dell Latitude 7390 x360", category: "Dell", price: 275000, image: "Dell laptops/9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen, Backlit" },
+            { id: 40, name: "Dell Latitude 5400", category: "Dell", price: 250000, image: "Dell laptops/9410.jpeg", specs: "Core i5 8th Gen, 8GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 41, name: "Dell Latitude 5410", category: "Dell", price: 280000, image: "Dell laptops/9410.jpeg", specs: "Core i5 10th Gen, 8GB RAM, 256GB SSD, 14 inch, Backlit" },
+            { id: 42, name: "Dell Latitude 5410", category: "Dell", price: 350000, image: "Dell laptops/9410.jpeg", specs: "Core i7 10th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 43, name: "Dell 7410 2-in-1", category: "Dell", price: 440000, image: "Dell laptops/9410.jpeg", specs: "Core i7 10th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
+            { id: 44, name: "Dell 7420 2-in-1", category: "Dell", price: 500000, image: "Dell laptops/9410.jpeg", specs: "Core i7 11th Gen, 16GB RAM, 256GB SSD, 14 inch, Touchscreen, Backlit" },
             { id: 45, name: "Dell 3300", category: "Dell", price: 155000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i3 7th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen" },
             { id: 46, name: "Dell 3310", category: "Dell", price: 175000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i3 8th Gen, 8GB RAM, 256GB SSD, 13 inch, Touchscreen" },
             { id: 47, name: "Dell Precision 5540", category: "Dell", price: 630000, image: "Dell laptops/dell 9410.jpeg", specs: "Core i7 9th Gen, 16GB RAM, 512GB SSD, 15.6 inch, 4GB NVIDIA, Backlit" },
