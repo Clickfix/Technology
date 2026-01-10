@@ -174,8 +174,170 @@
         .bg-card-bg img, .product-image-wrap img {
             cursor: zoom-in;
         }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+        body.light-mode ::-webkit-scrollbar {
+            background: #f3f4f6;
+        }
+        body.light-mode ::-webkit-scrollbar-thumb {
+            background: #f97316;
+        }
+        body.light-mode ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        body.light-mode .bg-primary-dark {
+            background-color: #f9fafb;
+        }
+        body.light-mode .bg-card-bg {
+            background-color: #ffffff;
+            border-color: #e5e7eb;
+        }
+        body.light-mode .text-white {
+            color: #1f2937;
+        }
+        body.light-mode .text-gray-300 {
+            color: #6b7280;
+        }
+        body.light-mode .text-gray-400 {
+            color: #9ca3af;
+        }
+        body.light-mode .text-accent-orange {
+            color: #f97316;
+        }
+        body.light-mode .border-card-bg {
+            border-color: #e5e7eb;
+        }
+        body.light-mode .border-gray-700 {
+            border-color: #d1d5db;
+        }
+        body.light-mode input, body.light-mode textarea {
+            background-color: #ffffff;
+            color: #1f2937;
+            border-color: #d1d5db;
+        }
+        body.light-mode input:focus, body.light-mode textarea:focus {
+            border-color: #f97316;
+        }
+        body.light-mode .bg-primary-dark\/95 {
+            background-color: rgba(249, 250, 251, 0.95);
+        }
+        body.light-mode .bg-primary-dark\/50 {
+            background-color: rgba(249, 250, 251, 0.5);
+        }
+        body.light-mode .bg-gray-800 {
+            background-color: #f9fafb;
+        }
+        body.light-mode .text-primary-dark {
+            color: #f9fafb;
+        }
+        body.light-mode .bg-accent-orange {
+            background-color: #f97316;
+        }
+        body.light-mode .hover\:bg-card-bg:hover {
+            background-color: #f3f4f6;
+        }
+        body.light-mode .hover\:bg-gray-700:hover {
+            background-color: #e5e7eb;
+        }
+        body.light-mode .mobile-marquee {
+            background-color: #f97316;
+            color: #ffffff;
+        }
+        body.light-mode .bg-accent-orange.text-primary-dark {
+            background-color: #f97316;
+            color: #ffffff;
+        }
+        body.light-mode .bg-green-600 {
+            background-color: #16a34a;
+        }
+        body.light-mode .bg-blue-600 {
+            background-color: #2563eb;
+        }
+        body.light-mode .bg-blue-400 {
+            background-color: #60a5fa;
+        }
+        body.light-mode .bg-gray-600 {
+            background-color: #9ca3af;
+        }
+        body.light-mode .hover\:bg-green-700:hover {
+            background-color: #15803d;
+        }
+        body.light-mode .hover\:bg-blue-700:hover {
+            background-color: #1d4ed8;
+        }
+        body.light-mode .hover\:bg-blue-500:hover {
+            background-color: #3b82f6;
+        }
+        body.light-mode .hover\:bg-gray-700:hover {
+            background-color: #6b7280;
+        }
+        body.light-mode .hover\:text-white:hover {
+            color: #ffffff;
+        }
+        body.light-mode .hover\:text-accent-orange:hover {
+            color: #f97316;
+        }
+        body.light-mode .bg-black\/60 {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        body.light-mode .bg-primary-dark\/95 {
+            background-color: rgba(249, 250, 251, 0.95);
+        }
+        body.light-mode .bg-card-bg\/50 {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        body.light-mode .border-accent-orange\/30 {
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+        body.light-mode .shadow-accent-orange\/30 {
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+        }
+        body.light-mode .bg-orange-700 {
+            background-color: #c2410c;
+        }
+        body.light-mode .hover\:bg-orange-700:hover {
+            background-color: #c2410c;
+        }
+        body.light-mode .text-gray-500 {
+            color: #6b7280;
+        }
+        body.light-mode .text-gray-200 {
+            color: #9ca3af;
+        }
+        body.light-mode .bg-primary-dark {
+            background-color: #f9fafb;
+            border-color: #e5e7eb;
+        }
+        body.light-mode .border-primary-dark {
+            border-color: #e5e7eb;
+        }
+        body.light-mode .hover\:bg-primary-dark:hover {
+            background-color: #e5e7eb;
+        }
+        body.light-mode .text-primary-dark {
+            color: #f9fafb;
+        }
+        body.light-mode .bg-card-bg\/50 {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        body.light-mode .text-accent-orange.hover\:text-white:hover {
+            color: #ffffff;
+        }
     </style>
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN0N8HRJ9J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN0N8HRJ9J');
+    </script>
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -196,10 +358,15 @@
             "https://www.tiktok.com/@clickfix_technology",
             "https://www.instagram.com/clickfix_technology"
         ],
-        "priceRange": "₦140,000 - ₦1,850,000"
+        "priceRange": "₦140,000 - ₦1,850,000",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150"
+        }
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -219,6 +386,22 @@
             "addressLocality": "Lagos",
             "addressCountry": "NG"
         }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://clickfixtech.com"
+            }
+        ]
     }
     </script>
 </head>
@@ -268,6 +451,7 @@
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#catalog-view" data-view="catalog-view" onclick="setMode('laptops'); setFilter('HP'); navigateTo('catalog-view')" class="nav-link text-gray-300 hover:text-accent-orange transition">Laptops</a>
                 <a href="#catalog-view" data-view="catalog-view" onclick="setMode('phones'); setFilter('Samsung'); navigateTo('catalog-view')" class="nav-link text-gray-300 hover:text-accent-orange transition">Phones</a>
+                <a href="#blog-view" data-view="blog-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Blog</a>
                 <a href="#build-view" data-view="build-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Build Your PC</a>
                 <a href="#services-view" data-view="services-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Services</a>
                 <a href="#contact-view" data-view="contact-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Contact</a>
@@ -276,8 +460,18 @@
                 </a>
             </nav>
 
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="hidden md:flex items-center ml-6 p-2 rounded-lg bg-card-bg hover:bg-gray-700 transition">
+                <svg id="sun-icon" class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <svg id="moon-icon" class="w-5 h-5 text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+
             <!-- Search (desktop) -->
-            <form onsubmit="event.preventDefault(); searchProducts(document.getElementById('nav-search').value)" class="hidden md:flex items-center ml-6">
+            <form onsubmit="event.preventDefault(); searchProducts(document.getElementById('nav-search').value)" class="hidden md:flex items-center ml-4">
                 <input id="nav-search" type="search" placeholder="Search laptops and phones..." aria-label="Search laptops and phones" class="px-3 py-2 rounded-l-full bg-card-bg border border-gray-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-accent-orange" />
                 <button type="button" onclick="searchProducts(document.getElementById('nav-search').value)" class="px-3 py-2 rounded-r-full bg-accent-orange text-white font-bold ml-0">Search</button>
             </form>
@@ -577,6 +771,148 @@
                     </div>
                 </section>
 
+                <!-- Customer Testimonials Section -->
+                <section class="py-16 mb-16">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-3xl font-bold text-white border-l-4 border-accent-orange pl-4">What Our Customers Say</h2>
+                        <div class="flex items-center gap-2 text-accent-orange">
+                            <span class="text-2xl">★★★★★</span>
+                            <span class="text-sm font-bold">4.8/5 (150+ reviews)</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Testimonial 1 -->
+                        <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center text-primary-dark font-bold text-lg">
+                                    A
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold">Adebayo Johnson</h4>
+                                    <p class="text-gray-400 text-sm">Business Executive, Lagos</p>
+                                </div>
+                            </div>
+                            <div class="flex text-accent-orange mb-3">
+                                ★★★★★
+                            </div>
+                            <p class="text-gray-300 italic">"Outstanding service! I purchased an HP EliteBook and it arrived in perfect condition. The team was very professional and the delivery was faster than expected. Highly recommended for business professionals."</p>
+                            <p class="text-accent-orange text-sm mt-3 font-bold">Verified Purchase • HP EliteBook 840 G7</p>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center text-primary-dark font-bold text-lg">
+                                    C
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold">Chioma Okwu</h4>
+                                    <p class="text-gray-400 text-sm">Student, Abuja</p>
+                                </div>
+                            </div>
+                            <div class="flex text-accent-orange mb-3">
+                                ★★★★★
+                            </div>
+                            <p class="text-gray-300 italic">"Got my Lenovo ThinkPad for school at a great price. The laptop works perfectly and the customer support helped me choose the right model for my coursework. Very satisfied with my purchase!"</p>
+                            <p class="text-accent-orange text-sm mt-3 font-bold">Verified Purchase • Lenovo ThinkPad X1 Carbon</p>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-accent-orange rounded-full flex items-center justify-center text-primary-dark font-bold text-lg">
+                                    O
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold">Olu Adeyemi</h4>
+                                    <p class="text-gray-400 text-sm">IT Manager, Port Harcourt</p>
+                                </div>
+                            </div>
+                            <div class="flex text-accent-orange mb-3">
+                                ★★★★★
+                            </div>
+                            <p class="text-gray-300 italic">"Excellent quality refurbished laptops. I bought three Dell Latitudes for my team and they perform like new. The warranty and support are top-notch. Will definitely buy again."</p>
+                            <p class="text-accent-orange text-sm mt-3 font-bold">Verified Purchase • Dell Latitude 5410 (x3)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="py-16 bg-card-bg rounded-xl mx-4 mb-16">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold mb-4 text-white">Frequently Asked Questions</h2>
+                        <p class="text-gray-400 max-w-2xl mx-auto">Get answers to common questions about our laptops, phones, warranties, and services in Nigeria.</p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">Do you offer warranties on your products?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">Yes! All our laptops and phones come with comprehensive warranties. New/refurbished products include 6-12 months warranty, and we offer extended warranty options for additional peace of mind.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">How long does delivery take in Nigeria?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">Delivery typically takes 1-3 business days within Lagos and major cities. For other locations, it may take 3-7 business days. We use reliable courier services and provide tracking information for all orders.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">Are your refurbished laptops reliable?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">Absolutely! Our refurbished laptops undergo thorough testing and certification. We only sell products that meet our quality standards and perform like new. Each unit comes with full specifications and warranty coverage.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">Do you accept installment payments?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">Yes, we offer flexible payment options including installments for qualified customers. Contact us via WhatsApp to discuss payment plans for orders above ₦200,000.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">Can I return or exchange a product?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">We offer a 7-day return policy for defective products and 3-day exchange policy for change of mind (subject to restocking fee). All returns must be in original condition with proof of purchase.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="bg-primary-dark rounded-lg border border-gray-700">
+                            <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-gray-800 transition">
+                                <h3 class="text-white font-semibold pr-4">Do you offer technical support?</h3>
+                                <span class="text-accent-orange text-xl faq-icon">▼</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-300">Yes! We provide comprehensive technical support including setup assistance, software installation, troubleshooting, and repairs. Our team of certified technicians is available via phone, WhatsApp, or in-person service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Newsletter Signup Section -->
                 <section class="py-16 bg-card-bg rounded-xl mx-4 mb-16">
                     <div class="text-center">
@@ -663,6 +999,127 @@
                         <a href="https://wa.me/2348138807336?text=Hello%20Click%20Fix,%20I%20need%20software%20installation." target="_blank" class="text-accent-orange font-bold hover:underline">Get Help &rarr;</a>
                     </div>
                 </div>
+            </div>
+
+            <!-- BLOG VIEW -->
+            <div id="blog-view" class="hidden page-view">
+                <h2 class="text-4xl font-extrabold text-center mb-10 text-accent-orange">Tech Blog & Guides</h2>
+
+                <!-- Featured Article -->
+                <section class="mb-16">
+                    <div class="bg-card-bg p-8 rounded-xl shadow-2xl mb-8">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2">
+                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600" alt="Best Business Laptops 2024" class="rounded-xl w-full">
+                            </div>
+                            <div class="md:w-1/2">
+                                <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                                    <span class="bg-accent-orange text-primary-dark px-2 py-1 rounded text-xs font-bold">FEATURED</span>
+                                    <span>Dec 15, 2024</span>
+                                    <span>•</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Top 10 Business Laptops for Nigerian Professionals in 2024</h3>
+                                <p class="text-gray-400 mb-6">Discover the best laptops for business use in Nigeria, from HP EliteBooks to Lenovo ThinkPads. We compare performance, battery life, and value for money.</p>
+                                <a href="#" class="text-accent-orange font-bold hover:underline">Read Full Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blog Posts Grid -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?w=400" alt="HP vs Dell Laptops" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Dec 10, 2024</span>
+                            <span>•</span>
+                            <span>3 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">HP EliteBook vs Dell Latitude: Which is Better for Business?</h3>
+                        <p class="text-gray-400 mb-4">A comprehensive comparison of HP and Dell business laptops available in Nigeria.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1587614295993-0db1ce2d4589?w=400" alt="iPhone vs Samsung" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Dec 8, 2024</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">iPhone 16 vs Samsung Galaxy S24: Best Choice for Nigerians</h3>
+                        <p class="text-gray-400 mb-4">Compare the latest flagship phones and find out which offers better value in Nigeria.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400" alt="Laptop Buying Guide" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Dec 5, 2024</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Complete Guide to Buying Used Laptops in Nigeria</h3>
+                        <p class="text-gray-400 mb-4">Everything you need to know before purchasing a refurbished laptop in Nigeria.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+
+                    <!-- Blog Post 4 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" alt="Gaming Laptops" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Dec 1, 2024</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Best Gaming Laptops Available in Nigeria</h3>
+                        <p class="text-gray-400 mb-4">Top gaming laptops from HP, Dell, and Lenovo available for purchase in Nigeria.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+
+                    <!-- Blog Post 5 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=400" alt="Laptop Maintenance" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Nov 28, 2024</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">How to Extend Your Laptop's Battery Life</h3>
+                        <p class="text-gray-400 mb-4">Practical tips to maximize battery performance on your HP, Dell, or Lenovo laptop.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+
+                    <!-- Blog Post 6 -->
+                    <div class="bg-card-bg p-6 rounded-xl shadow-lg border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400" alt="Custom PC Builds" class="rounded-lg w-full h-48 object-cover mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                            <span>Nov 25, 2024</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Building a Custom Gaming PC: Complete Guide</h3>
+                        <p class="text-gray-400 mb-4">Step-by-step guide to building your dream gaming PC in Nigeria.</p>
+                        <a href="#" class="text-accent-orange font-bold hover:underline">Read More →</a>
+                    </div>
+                </section>
+
+                <!-- Newsletter CTA -->
+                <section class="mt-16 bg-card-bg rounded-xl p-8 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Stay Updated with Tech News</h3>
+                    <p class="text-gray-400 mb-6">Get the latest tech reviews, buying guides, and exclusive deals delivered to your inbox.</p>
+                    <form onsubmit="handleNewsletterSignup(event)" class="max-w-md mx-auto flex gap-3">
+                        <input type="email" id="blog-newsletter-email" placeholder="Enter your email address" required
+                               class="flex-1 px-4 py-3 rounded-lg bg-primary-dark border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-accent-orange">
+                        <button type="submit" class="px-6 py-3 bg-accent-orange text-white font-bold rounded-lg hover:bg-orange-700 transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </section>
             </div>
 
             <!-- CONTACT VIEW -->
@@ -960,6 +1417,68 @@
             if (e.target === modal) closeImageModal();
         });
 
+        // Social sharing functions
+        function shareOnWhatsApp(productName, priceStr) {
+            const text = `Check out this ${productName} for ${priceStr} at Click Fix Technology! ${window.location.href}`;
+            const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareOnFacebook(productName) {
+            const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=Check out this ${productName} at Click Fix Technology!`;
+            window.open(url, '_blank');
+        }
+
+        function shareOnTwitter(productName) {
+            const text = `Check out this ${productName} at Click Fix Technology!`;
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+
+        async function copyProductLink(productName) {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                // Simple feedback - you could enhance this with a toast notification
+                alert(`Link copied! Share this ${productName} with your friends.`);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert(`Link copied! Share this ${productName} with your friends.`);
+            }
+        }
+
+        // Newsletter signup handler
+        function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            // Here you would typically send this to your backend
+            // For now, we'll show a success message
+            alert('Thank you for subscribing! You\'ll receive our latest deals and tech updates.');
+            document.getElementById('newsletter-email').value = '';
+        }
+
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.classList.add('block');
+                icon.textContent = '▲';
+            } else {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+                icon.textContent = '▼';
+            }
+        }
+
         function renderFilterButtons() {
             const container = document.getElementById('filter-buttons');
             let categories = ['All', 'HP', 'Dell', 'Lenovo', 'Samsung', 'iPhone'];
@@ -1023,12 +1542,60 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (body.classList.contains('light-mode')) {
+                // Switch to dark mode
+                body.classList.remove('light-mode');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to light mode
+                body.classList.add('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme preference
+        function loadThemePreference() {
+            const savedTheme = localStorage.getItem('theme');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                // Default to dark mode
+                document.body.classList.remove('light-mode');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
             navigateTo(hash && document.getElementById(hash) ? hash : 'home-view');
             renderHomeHP();
             // schedule auto-flip for any visible cards on load
             scheduleAutoFlip();
+
+            // Initialize theme
+            loadThemePreference();
+
+            // Add theme toggle event listener
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
         });
     </script>
    </body>
