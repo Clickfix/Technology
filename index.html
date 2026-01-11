@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Click Fix Technology - Premium laptops (HP, Dell, Lenovo) and used UK phones (Samsung, iPhone) in Nigeria. High-performance computers and smartphones with fast repair and custom PC builds.">
-    <meta name="keywords" content="laptops Nigeria, HP laptops, Dell laptops, Lenovo laptops, phones Nigeria, Samsung phones, iPhone, used UK phones, laptop repair Nigeria, IT support, custom PC">
+    <meta name="keywords" content="laptops Nigeria, HP laptops, Dell laptops, Lenovo laptops, phones Nigeria, Samsung phones, iPhone, used UK phones, laptop repair Nigeria, IT support, custom PC, uk used laptops, best laptops for student, affordable laptops in nigeria">
     <meta name="author" content="Click Fix Technology">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#F97316">
@@ -327,6 +327,66 @@
         body.light-mode .text-accent-orange.hover\:text-white:hover {
             color: #ffffff;
         }
+
+        /* Hero content text colors for light mode */
+        body.light-mode .hero-content p {
+            color: #ffffff; /* Keep paragraph text white even in light mode */
+        }
+        body.light-mode .hero-content h1 {
+            color: #ffffff; /* Keep heading white even in light mode */
+        }
+
+        /* Product specs text contrast for light mode */
+        body.light-mode .text-gray-400 {
+            color: #374151; /* Darker gray for better contrast on light backgrounds */
+        }
+
+        /* Hero Background Slideshow */
+        .hero-bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6); /* Dark overlay for text readability */
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 400px;
+        }
     </style>
     
     <!-- Google Analytics -->
@@ -449,7 +509,7 @@
 
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center space-x-6">
-                <a href="#catalog-view" data-view="catalog-view" onclick="setMode('laptops'); setFilter('HP'); navigateTo('catalog-view')" class="nav-link text-gray-300 hover:text-accent-orange transition">Laptops</a>
+                <a href="#catalog-view" data-view="catalog-view" onclick="setMode('laptops'); setFilter('All'); navigateTo('catalog-view')" class="nav-link text-gray-300 hover:text-accent-orange transition">Laptops</a>
                 <a href="#catalog-view" data-view="catalog-view" onclick="setMode('phones'); setFilter('Samsung'); navigateTo('catalog-view')" class="nav-link text-gray-300 hover:text-accent-orange transition">Phones</a>
                 <a href="#blog-view" data-view="blog-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Blog</a>
                 <a href="#build-view" data-view="build-view" class="nav-link text-gray-300 hover:text-accent-orange transition">Build Your PC</a>
@@ -494,7 +554,7 @@
                 <input id="mobile-search" type="search" placeholder="Search..." class="flex-1 px-3 py-2 rounded-l-full bg-primary-dark border border-gray-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-accent-orange" />
                 <button type="button" onclick="searchProducts(document.getElementById('mobile-search').value)" class="px-3 py-2 rounded-r-full bg-accent-orange text-white font-bold">Search</button>
             </form>
-            <a href="#catalog-view" data-view="catalog-view" onclick="setMode('laptops'); setFilter('HP'); navigateTo('catalog-view')" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Laptops</a>
+            <a href="#catalog-view" data-view="catalog-view" onclick="setMode('laptops'); setFilter('All'); navigateTo('catalog-view')" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Laptops</a>
             <a href="#catalog-view" data-view="catalog-view" onclick="setMode('phones'); setFilter('Samsung'); navigateTo('catalog-view')" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Phones</a>
             <a href="#blog-view" data-view="blog-view" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Blog</a>
             <a href="#build-view" data-view="build-view" class="block py-3 px-4 text-center border-b border-primary-dark hover:bg-primary-dark nav-link">Build Your PC</a>
@@ -545,17 +605,25 @@
             <!-- HOME VIEW -->
             <div id="home-view" class="page-view">
                 <!-- Hero Section -->
-                <section class="text-center py-20 rounded-xl bg-card-bg shadow-2xl mb-16 px-4">
-                    <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 text-white">
-                        Powering Your <span class="text-accent-orange">Future</span>
-                    </h1>
-                    <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                        High-performance computers and smartphones with reliable, swift IT service in Nigeria. **Click** for the product, **Fix** for the support.
-                    </p>
-                    <a href="#catalog-view" data-view="catalog-view" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-accent-orange hover:bg-orange-700 transition transform hover:scale-105 nav-link">
-                        Explore Our Laptops
-                        <!-- Features Section -->
-                    </a>
+                <section class="hero-section text-center py-20 rounded-xl shadow-2xl mb-16 px-4 relative overflow-hidden">
+                    <div class="hero-bg-slideshow">
+                        <div class="hero-slide active" style="background-image: url('Hp laptops/1040 G7.jpeg');"></div>
+                        <div class="hero-slide" style="background-image: url('Dell laptops/7410 x360 side 1.jpeg');"></div>
+                        <div class="hero-slide" style="background-image: url('Lenovo/yoga x1 carbon.jpeg');"></div>
+                    </div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content relative z-10">
+                        <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 text-white">
+                            Powering Your <span class="text-accent-orange">Future</span>
+                        </h1>
+                        <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                            High-performance computers and smartphones with reliable, swift IT service in Nigeria. **Click** for the product, **Fix** for the support.
+                        </p>
+                        <a href="#catalog-view" data-view="catalog-view" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-accent-orange hover:bg-orange-700 transition transform hover:scale-105 nav-link">
+                            Explore Our Laptops
+                            <!-- Features Section -->
+                        </a>
+                    </div>
                 </section>
                 
                 <!-- Best Sellers Section -->
@@ -1604,6 +1672,26 @@
             }
         }
 
+        // Hero slideshow functionality
+        function initHeroSlideshow() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Start slideshow - change slide every 4 seconds
+            setInterval(nextSlide, 4000);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
             navigateTo(hash && document.getElementById(hash) ? hash : 'home-view');
@@ -1623,6 +1711,9 @@
             if (mobileThemeToggle) {
                 mobileThemeToggle.addEventListener('click', toggleTheme);
             }
+
+            // Initialize hero slideshow
+            initHeroSlideshow();
         });
     </script>
    </body>
